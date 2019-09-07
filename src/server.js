@@ -6,6 +6,6 @@ app.use(async ctx => {
   ctx.body = 'Hello World'
 })
 
-console.log('jbh test')
+console.log('test')
 
 app.listen(3000)

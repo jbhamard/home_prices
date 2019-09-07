@@ -6,6 +6,7 @@ services:
       context: '.'
       dockerfile: Dockerfile.dev
     container_name: web
+    command: nodemon /home_prices/app/server.js
     env_file:
       - dev.env
     environment:
@@ -13,7 +14,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - ./:/app
+      - ./:/home_prices
     depends_on:
       - redis
       - postgres

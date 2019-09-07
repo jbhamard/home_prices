@@ -33,5 +33,5 @@ function () {
     return _ref.apply(this, arguments);
   };
 }());
-console.log('jbh test');
+console.log('test');
 app.listen(3000);
