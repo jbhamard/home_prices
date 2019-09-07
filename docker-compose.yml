@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: '.'
+      dockerfile: Dockerfile.dev
+    container_name: web
+    env_file:
+      - dev.env
+    environment:
+      - SERVER_HOST=0.0.0.0
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - home-prices-network
+
+  redis:
+    image: 'redis:5.0.5'
+    container_name: redis
+    networks:
+      - home-prices-network
+
+  postgres:
+    image: postgres:11.5
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=qonto_datamart
+    networks:
+      - home-prices-network
+
+volumes:
+  redis:
+  postgres: {}
+
+networks:
+  home-prices-network:

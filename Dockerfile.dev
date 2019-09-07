@@ -1,0 +1,11 @@
+FROM node:12.10.0-buster
+
+SHELL ["/bin/bash", "--login", "-c"]
+
+RUN mkdir /home_prices
+WORKDIR /home_prices
+
+# Install nvm
+RUN apt-get update && apt-get install --yes curl
+
+ENTRYPOINT ["node", "/home_prices/app/server.js"]

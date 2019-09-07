@@ -1,0 +1,34 @@
+{
+  "name": "home-prices",
+  "private": true,
+  "version": "0.0.1",
+  "description": "nodejs app home-prices",
+  "author": "Jean-Benoit Hamard <jean.benoit.hamard@gmail.com>",
+  "scripts": {
+    "prettier": "npx prettier --write src/**/*.js src/*.js",
+    "eslint": "npx eslint src/**/*.js",
+    "watch": "watch -p \"src/**/*.*\" -c \"npm run build\"",
+    "babel": "npx babel src --out-dir app",
+    "build": "npm run prettier && npm run eslint && npm run babel",
+    "build-watch": "npm run build && npm run watch",
+    "start-dev": "npx nodemon ./app/server.js"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.0",
+    "bunyan": "^1.8.12",
+    "koa": "^2.8.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "nodemon": "^1.19.2",
+    "prettier": "^1.18.2",
+    "watch-cli": "^0.2.3"
+  }
+}
