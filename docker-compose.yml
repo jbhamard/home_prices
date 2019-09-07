@@ -32,7 +32,7 @@ services:
     container_name: postgres
     environment:
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=qonto_datamart
+      - POSTGRES_DB=home_prices
     networks:
       - home-prices-network
 
